@@ -1,3 +1,4 @@
+import 'package:bem_aventurancas/screens/home/widget/stagger_animation.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -5,25 +6,32 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+
+  AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+        vsync: this,
+        duration: Duration(seconds: 2)
+    );
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.grey, opacity: 1),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Image.asset("assets/imagens/cmslogo.jpg"),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-
-          ],
-        ),
-      ),
+    return StaggerAnimation(
+      controller: _controller.view,
     );
   }
 }
