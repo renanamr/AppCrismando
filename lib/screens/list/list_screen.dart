@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 
 
 class ListScreen extends StatefulWidget {
+
+  final bool news;
+
+  ListScreen({@required this.news});
+
   @override
   _ListScreenState createState() => _ListScreenState();
 }
@@ -33,6 +38,7 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
   Widget build(BuildContext context) {
     return StaggerAnimation(
       controller: _controller.view,
+      news: widget.news,
     );
   }
 }

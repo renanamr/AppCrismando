@@ -18,9 +18,9 @@ class StaggerAnimation extends StatelessWidget {
     return Stack(
       alignment: Alignment.bottomCenter,
       children: <Widget>[
-        ButtonOptions(icon: Icons.notifications, text: "Avisos e Notícias", function: (){Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListScreen()));}, marginBottom: listSlidePosition.value * 0,),
+        ButtonOptions(icon: Icons.notifications, text: "Avisos e Notícias", function: (){Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListScreen(news: true,)));}, marginBottom: listSlidePosition.value * 0,),
         ButtonOptions(icon: Icons.chrome_reader_mode, text: "Leitura Diaria", function: (){}, marginBottom: listSlidePosition.value * 1,),
-        ButtonOptions(icon: Icons.book, text: "Diario Espiritual", function: (){ Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListScreen()));}, marginBottom: listSlidePosition.value * 2,),
+        ButtonOptions(icon: Icons.book, text: "Diario Espiritual", function: (){ Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListScreen(news: false,)));}, marginBottom: listSlidePosition.value * 2,),
       ],
     );
   }
