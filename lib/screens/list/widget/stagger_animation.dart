@@ -21,7 +21,7 @@ class StaggerAnimation extends StatelessWidget {
   ["Teste1","Teste2","Teste3","Teste4","Teste5","Teste6","Teste7","Teste8"]; //Teste títulos do Diario espiritual
 
   List<News> listNews =
-  [News("Teste 1",description: "Notícia para teste, apes."),News("Teste 2",description: "Notícia para teste, apes2.")]; // Teste de noticias;
+  [News("Teste 1, com palavras grandes para ver alinhamento",description: "Notícia para teste, apes.Notícia para teste, apes.vvvNotícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes."),News("Teste 2",description: "Notícia para teste, apes2.")]; // Teste de noticias;
 
 
   Widget _buildAnimation(BuildContext context, Widget child){
