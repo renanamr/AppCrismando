@@ -1,5 +1,7 @@
+import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:bem_aventurancas/model/News.dart';
 import 'package:bem_aventurancas/screens/list/widget/card_list.dart';
+import 'package:bem_aventurancas/screens/list/widget/icon_bar_button.dart';
 import 'package:flutter/material.dart';
 
 import 'card_list_news.dart';
@@ -17,8 +19,8 @@ class StaggerAnimation extends StatelessWidget {
 
   final Animation<double> listSlidePosition;
 
-  List<String> titulos =
-  ["Teste1","Teste2","Teste3","Teste4","Teste5","Teste6","Teste7","Teste8"]; //Teste títulos do Diario espiritual
+  List<DailyLiturgy> listDailyLiturgy =
+  [DailyLiturgy("Teste1","12/10/2020"),DailyLiturgy("Teste2","11/10/2020"),DailyLiturgy("Teste3","13/10/2020")]; //Teste dias do Diario espiritual
 
   List<News> listNews =
   [News("Teste 1, com palavras grandes para ver alinhamento",description: "Notícia para teste, apes.Notícia para teste, apes.vvvNotícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes."),News("Teste 2",description: "Notícia para teste, apes2.")]; // Teste de noticias;
@@ -36,9 +38,9 @@ class StaggerAnimation extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         ListView.builder(
-            itemCount: titulos.length,
+            itemCount: listDailyLiturgy.length,
             itemBuilder: (context, index) {
-              return CardList(listSlidePosition: listSlidePosition,titulo: titulos[index],);
+              return CardList(listSlidePosition: listSlidePosition,dailyLiturgy: listDailyLiturgy[index],);
             })
       ],
     );
@@ -66,6 +68,9 @@ class StaggerAnimation extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Image.asset("assets/imagens/cmslogo.jpg"),
+        actions: <Widget>[
+          IconBarButton(news: news,)
+        ],
       ),
       body: Container(
           padding: EdgeInsets.all(5),

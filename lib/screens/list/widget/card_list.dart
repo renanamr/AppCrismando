@@ -1,10 +1,11 @@
+import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:flutter/material.dart';
 
 class CardList extends StatefulWidget {
   final Animation<double> listSlidePosition;
-  final String titulo;
+  final DailyLiturgy dailyLiturgy;
 
-  CardList({@required this.listSlidePosition,@required this.titulo});
+  CardList({@required this.listSlidePosition,@required this.dailyLiturgy});
 
   @override
   _CardListState createState() => _CardListState();
@@ -19,7 +20,7 @@ class _CardListState extends State<CardList> {
         onTap: () {
         },
         title: Text(
-          "${widget.titulo}",
+          "${widget.dailyLiturgy.title}",
           style: TextStyle(color: Colors.black),
         ),
       ),
