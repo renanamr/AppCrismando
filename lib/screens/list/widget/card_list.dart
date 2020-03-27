@@ -1,4 +1,5 @@
 import 'package:bem_aventurancas/model/DailyLiturgy.dart';
+import 'package:bem_aventurancas/screens/dailyLiturgy/daily_liturgy_screens.dart';
 import 'package:flutter/material.dart';
 
 class CardList extends StatefulWidget {
@@ -17,8 +18,7 @@ class _CardListState extends State<CardList> {
     return Card(
       margin: EdgeInsets.only(bottom: widget.listSlidePosition.value),
       child: ListTile(
-        onTap: () {
-        },
+        onTap: () { Navigator.push(context, MaterialPageRoute(builder:(_)=> DailyLiturgyScreen(edit: true,)));},
         title: Text(
           "${widget.dailyLiturgy.title}",
           style: TextStyle(color: Colors.black),

@@ -1,4 +1,4 @@
-import 'package:bem_aventurancas/screens/home/home_screens.dart';
+import 'package:bem_aventurancas/screens/dailyLiturgy/daily_liturgy_screens.dart';
 import 'package:flutter/material.dart';
 
 class IconBarButton extends StatelessWidget {
@@ -11,7 +11,11 @@ class IconBarButton extends StatelessWidget {
     if(news){
       return Container();
     }else{
-      return IconButton(icon: Icon(Icons.add), onPressed: (){});
+      return IconButton(
+          icon: Icon(Icons.add),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder:(_)=> DailyLiturgyScreen(edit: false,)));}
+            );
     }
   }
 }
