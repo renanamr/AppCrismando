@@ -40,6 +40,8 @@ class _DailyLiturgyScreenState extends State<DailyLiturgyScreen> with SingleTick
   Widget build(BuildContext context) {
     return StaggerAnimation(
       controller: _controller.view,
+      edit: widget.edit,
+      liturgy: widget.liturgy,
     );
   }
 }

@@ -10,8 +10,9 @@ class StaggerAnimation extends StatelessWidget {
 
   final AnimationController controller;
   final bool news;
+  final News liturgy;
 
-  StaggerAnimation({@required this.controller,@required this.news}) :
+  StaggerAnimation({@required this.controller,@required this.news,this.liturgy}) :
         listSlidePosition = Tween<double>(
             begin: 0,
             end: 5
@@ -40,7 +41,7 @@ class StaggerAnimation extends StatelessWidget {
         ListView.builder(
             itemCount: listDailyLiturgy.length,
             itemBuilder: (context, index) {
-              return CardList(listSlidePosition: listSlidePosition,dailyLiturgy: listDailyLiturgy[index],);
+              return CardList(listSlidePosition: listSlidePosition,dailyLiturgy: listDailyLiturgy[index]);
             })
       ],
     );
@@ -69,7 +70,7 @@ class StaggerAnimation extends StatelessWidget {
         centerTitle: true,
         title: Image.asset("assets/imagens/cmslogo.jpg"),
         actions: <Widget>[
-          IconBarButton(news: news,)
+          IconBarButton(news: news,liturgy: liturgy,)
         ],
       ),
       body: Container(

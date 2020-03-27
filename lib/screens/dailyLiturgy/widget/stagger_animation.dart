@@ -2,12 +2,15 @@ import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:bem_aventurancas/model/News.dart';
 import 'package:flutter/material.dart';
 
+import 'floating_button_liturgy.dart';
+
 class StaggerAnimation extends StatelessWidget {
   final AnimationController controller;
+  final bool edit;
   final News liturgy;
   final DailyLiturgy dailyLiturgy;
 
-  StaggerAnimation({@required this.controller, this.liturgy, this.dailyLiturgy})
+  StaggerAnimation({@required this.controller,@required this.edit, this.liturgy, this.dailyLiturgy})
       : liturgyGrow =
             Tween<double>(begin: 0, end: 1000).animate(controller);
 
@@ -28,6 +31,7 @@ class StaggerAnimation extends StatelessWidget {
           padding: EdgeInsets.all(5),
         ),
       ),
+      floatingActionButton: FloatingButtonLiturgy(edit: edit,liturgy: liturgy,),
     );
   }
 }

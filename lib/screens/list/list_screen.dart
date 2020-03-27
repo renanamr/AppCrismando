@@ -1,3 +1,5 @@
+import 'package:bem_aventurancas/model/News.dart';
+
 import 'widget/stagger_animation.dart';
 import 'package:flutter/material.dart';
 
@@ -5,8 +7,9 @@ import 'package:flutter/material.dart';
 class ListScreen extends StatefulWidget {
 
   final bool news;
+  final News liturgy;
 
-  ListScreen({@required this.news});
+  ListScreen({@required this.news,this.liturgy});
 
   @override
   _ListScreenState createState() => _ListScreenState();
@@ -39,6 +42,7 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
     return StaggerAnimation(
       controller: _controller.view,
       news: widget.news,
+      liturgy: widget.liturgy
     );
   }
 }

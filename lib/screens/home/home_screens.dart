@@ -21,7 +21,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
     _controller = AnimationController(
         vsync: this,
-        duration: Duration(milliseconds: 1750)
+        duration: Duration(milliseconds: 1600)
     );
 
     _controller.forward();

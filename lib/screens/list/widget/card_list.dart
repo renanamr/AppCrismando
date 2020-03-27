@@ -6,7 +6,7 @@ class CardList extends StatefulWidget {
   final Animation<double> listSlidePosition;
   final DailyLiturgy dailyLiturgy;
 
-  CardList({@required this.listSlidePosition,@required this.dailyLiturgy});
+  CardList({@required this.listSlidePosition,@required this.dailyLiturgy,});
 
   @override
   _CardListState createState() => _CardListState();
