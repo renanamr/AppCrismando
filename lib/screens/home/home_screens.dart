@@ -1,7 +1,12 @@
+import 'package:bem_aventurancas/model/News.dart';
 import 'package:bem_aventurancas/screens/home/widget/stagger_animation.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
+  final News liturgy;
+
+  Home({@required this.liturgy});
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -32,6 +37,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return StaggerAnimation(
       controller: _controller.view,
+      liturgy: widget.liturgy,
     );
   }
 }

@@ -1,12 +1,16 @@
+import 'package:bem_aventurancas/model/News.dart';
 import 'package:bem_aventurancas/screens/home/widget/button_options.dart';
 import 'package:bem_aventurancas/screens/list/list_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../bottom_sheet.dart';
+
 class StaggerAnimation extends StatelessWidget {
 
   final AnimationController controller;
+  final News liturgy;
 
-  StaggerAnimation({@required this.controller}) :
+  StaggerAnimation({@required this.controller,@required this.liturgy}) :
         listSlidePosition = Tween<double>(
             begin: 0,
             end: 145
@@ -19,7 +23,7 @@ class StaggerAnimation extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: <Widget>[
         ButtonOptions(icon: Icons.notifications, text: "Avisos e Notícias", function: (){Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListScreen(news: true,)));}, marginBottom: listSlidePosition.value * 0,),
-        ButtonOptions(icon: Icons.chrome_reader_mode, text: "Leitura Diaria", function: (){}, marginBottom: listSlidePosition.value * 1,),
+        ButtonOptions(icon: Icons.chrome_reader_mode, text: "Leitura Diaria", function: (){bottomSheet b = bottomSheet(); b.newsExpanded(context,liturgy);}, marginBottom: listSlidePosition.value * 1,),
         ButtonOptions(icon: Icons.book, text: "Diario Espiritual", function: (){ Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListScreen(news: false,)));}, marginBottom: listSlidePosition.value * 2,),
       ],
     );
