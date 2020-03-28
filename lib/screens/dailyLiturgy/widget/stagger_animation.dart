@@ -27,7 +27,7 @@ class StaggerAnimation extends StatelessWidget {
           color: Color.fromRGBO(169, 26, 54, 1),
         ),
         Padding(padding: EdgeInsets.fromLTRB(15, MediaQuery.of(context).size.height *0.1, 15, 5),
-          child: ContainerAsk(),)
+          child: ContainerAsk(dailyLiturgy: DailyLiturgy(liturgy.title, "")),)
       ],
     );
   }

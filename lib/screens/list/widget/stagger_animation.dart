@@ -9,23 +9,20 @@ import 'card_list_news.dart';
 class StaggerAnimation extends StatelessWidget {
 
   final AnimationController controller;
-  final bool news;
   final News liturgy;
+  final bool news;
+  final List<DailyLiturgy> listDailyLiturgy;
+  final List<News> listNews;
 
-  StaggerAnimation({@required this.controller,@required this.news,this.liturgy}) :
+  StaggerAnimation({@required this.controller, @required this.listDailyLiturgy,
+    @required this.listNews,@required this.news, this.liturgy}) :
         listSlidePosition = Tween<double>(
             begin: 0,
             end: 5
         ).animate(controller);
 
+
   final Animation<double> listSlidePosition;
-
-  List<DailyLiturgy> listDailyLiturgy =
-  [DailyLiturgy("Teste1","12/10/2020"),DailyLiturgy("Teste2","11/10/2020"),DailyLiturgy("Teste3","13/10/2020")]; //Teste dias do Diario espiritual
-
-  List<News> listNews =
-  [News("Teste 1, com palavras grandes para ver alinhamento",description: "Notícia para teste, apes.Notícia para teste, apes.vvvNotícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes."),News("Teste 2",description: "Notícia para teste, apes2.")]; // Teste de noticias;
-
 
   Widget _buildAnimation(BuildContext context, Widget child){
     if(news)

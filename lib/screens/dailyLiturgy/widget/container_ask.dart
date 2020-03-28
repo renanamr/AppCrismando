@@ -1,28 +1,34 @@
+import 'package:bem_aventurancas/helpers/InformationHelper.dart';
 import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:flutter/material.dart';
 
+
 class ContainerAsk extends StatefulWidget {
+
+  final DailyLiturgy dailyLiturgy;
+
+  ContainerAsk({@required this.dailyLiturgy});
+
   @override
   _ContainerAskState createState() => _ContainerAskState();
 }
 
 class _ContainerAskState extends State<ContainerAsk> {
 
+  InformationHelper database = InformationHelper();
   TextEditingController answerController1 = TextEditingController();
   TextEditingController answerController2 = TextEditingController();
   TextEditingController answerController3 = TextEditingController();
   TextEditingController answerController4 = TextEditingController();
 
-  _registerDiary(){
-    DailyLiturgy dailyLiturgy = DailyLiturgy(
-      "",
-      "",
-      answer1: answerController1.text,
-      answer2: answerController2.text,
-      answer3: answerController3.text,
-      answer4: answerController4.text,
-    );
+  _registerDiary() async{
 
+    widget.dailyLiturgy.answer1 = answerController1.text;
+    widget.dailyLiturgy.answer2 = answerController2.text;
+    widget.dailyLiturgy.answer3 = answerController3.text;
+    widget.dailyLiturgy.answer4 = answerController4.text;
+
+    await database.saveDailyLiturgy(widget.dailyLiturgy);
     Navigator.of(context).pop();
   }
 

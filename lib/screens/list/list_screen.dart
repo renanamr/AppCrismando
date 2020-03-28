@@ -1,3 +1,5 @@
+import 'package:bem_aventurancas/helpers/InformationHelper.dart';
+import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:bem_aventurancas/model/News.dart';
 
 import 'widget/stagger_animation.dart';
@@ -19,9 +21,19 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
 
   AnimationController _controller;
 
+  var _databese = InformationHelper();
+
+  List<DailyLiturgy> listDailyLiturgy = List<DailyLiturgy>();
+  List<News> listNews = List<News>();
+
   @override
   void initState() {
     super.initState();
+
+    if(widget.news)
+      _initializeListNews();
+    else
+      _initializeListDailyLiturgy();
 
     _controller = AnimationController(
         vsync: this,
@@ -36,13 +48,36 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
     _controller.dispose();
     super.dispose();
   }
+  _initializeListNews(){
+    setState(() {
+      listNews =
+      [News("Teste 1, com palavras grandes para ver alinhamento",description: "Notícia para teste, apes.Notícia para teste, apes.vvvNotícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes."),News("Teste 2",description: "Notícia para teste, apes2.")]; // Teste de noticias;
+    });
+  }
+
+  _initializeListDailyLiturgy() async {
+    List dailyLiturgyRec = await _databese.listDailyLiturgy();
+    List<DailyLiturgy> listTemporary = List<DailyLiturgy>();
+
+    for (var item in dailyLiturgyRec) {
+      DailyLiturgy dailyLiturgy = DailyLiturgy.fromMap(item);
+      listTemporary.add(dailyLiturgy);
+    }
+    setState(() {
+      listDailyLiturgy = listTemporary;
+    });
+
+    listTemporary = null;
+  }
 
   @override
   Widget build(BuildContext context) {
     return StaggerAnimation(
       controller: _controller.view,
       news: widget.news,
-      liturgy: widget.liturgy
+      liturgy: widget.liturgy,
+      listDailyLiturgy: listDailyLiturgy,
+      listNews: listNews,
     );
   }
 }
