@@ -1,4 +1,4 @@
-#Fri Mar 27 17:12:18 GMT 2020
+#Sat Mar 28 14:47:41 GMT 2020
 base.0=/home/renan/Área de Trabalho/Hd Externo/bem_aventurancas/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

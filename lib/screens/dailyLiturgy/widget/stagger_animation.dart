@@ -1,5 +1,6 @@
 import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:bem_aventurancas/model/News.dart';
+import 'package:bem_aventurancas/screens/dailyLiturgy/widget/container_ask.dart';
 import 'package:flutter/material.dart';
 
 import 'floating_button_liturgy.dart';
@@ -16,19 +17,26 @@ class StaggerAnimation extends StatelessWidget {
 
   final Animation<double> liturgyGrow;
 
+  Widget _buildForm(BuildContext context){
+    return Stack(
+      alignment: Alignment.topCenter,
+      children: <Widget>[
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height *0.2,
+          color: Color.fromRGBO(169, 26, 54, 1),
+        ),
+        Padding(padding: EdgeInsets.fromLTRB(15, MediaQuery.of(context).size.height *0.1, 15, 5),
+          child: ContainerAsk(),)
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.grey, opacity: 1),
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Image.asset("assets/imagens/cmslogo.jpg"),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(5),
+      body: Container(
+          child:SingleChildScrollView( child: _buildForm(context),
         ),
       ),
       floatingActionButton: FloatingButtonLiturgy(edit: edit,liturgy: liturgy,),

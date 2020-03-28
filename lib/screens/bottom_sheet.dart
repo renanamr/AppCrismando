@@ -54,7 +54,7 @@ class bottomSheet {
                           constraints: BoxConstraints( minHeight: 150, maxHeight: MediaQuery.of(context).size.height - 96),
 
                           child: SingleChildScrollView(
-                            child: Padding( padding: EdgeInsets.fromLTRB(12, 8, 10, 20),
+                            child: Padding( padding: EdgeInsets.fromLTRB(15, 10, 15, 20),
                                 child: Text(
                                   news.description,
                                   style: TextStyle(
