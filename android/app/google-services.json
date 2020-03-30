@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "887587147094",
+    "firebase_url": "https://crisma-37685.firebaseio.com",
+    "project_id": "crisma-37685",
+    "storage_bucket": "crisma-37685.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887587147094:android:696715da998bf357cadaf7",
+        "android_client_info": {
+          "package_name": "com.renan.admin_crisma_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887587147094-t7pmil3nq2euih6pdbh9ulv1kvsbpvh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKiweqNMpwn6rg4_MOLyxLZ2Zmx_6nsks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887587147094-t7pmil3nq2euih6pdbh9ulv1kvsbpvh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887587147094:android:cbb01ef3d738258fcadaf7",
+        "android_client_info": {
+          "package_name": "com.renan.bem_aventurancas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887587147094-t7pmil3nq2euih6pdbh9ulv1kvsbpvh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKiweqNMpwn6rg4_MOLyxLZ2Zmx_6nsks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887587147094-t7pmil3nq2euih6pdbh9ulv1kvsbpvh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

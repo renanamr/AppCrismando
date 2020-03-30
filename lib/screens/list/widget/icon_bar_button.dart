@@ -16,7 +16,7 @@ class IconBarButton extends StatelessWidget {
       return IconButton(
           icon: Icon(Icons.add),
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder:(_)=> DailyLiturgyScreen(edit: false,liturgy: liturgy,)));}
+            Navigator.pushReplacement(context, MaterialPageRoute(builder:(_)=> DailyLiturgyScreen(edit: false,liturgy: liturgy,)));}
             );
     }
   }

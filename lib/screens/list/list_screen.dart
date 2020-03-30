@@ -21,7 +21,7 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
 
   AnimationController _controller;
 
-  var _databese = InformationHelper();
+  var _database = InformationHelper();
 
   List<DailyLiturgy> listDailyLiturgy = List<DailyLiturgy>();
   List<News> listNews = List<News>();
@@ -48,6 +48,7 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
     _controller.dispose();
     super.dispose();
   }
+
   _initializeListNews(){
     setState(() {
       listNews =
@@ -56,7 +57,7 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
   }
 
   _initializeListDailyLiturgy() async {
-    List dailyLiturgyRec = await _databese.listDailyLiturgy();
+    List dailyLiturgyRec = await _database.listDailyLiturgy();
     List<DailyLiturgy> listTemporary = List<DailyLiturgy>();
 
     for (var item in dailyLiturgyRec) {

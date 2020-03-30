@@ -1,4 +1,10 @@
-#Sat Mar 28 16:32:12 GMT 2020
-base.0=/home/renan/Área de Trabalho/Hd Externo/bem_aventurancas/build/app/intermediates/transforms/dexMerger/debug/0
+#Mon Mar 30 10:48:18 GMT 2020
+path.2=classes3.dex
+path.1=classes2.dex
 path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.2=/home/renan/Área de Trabalho/Hd Externo/bem_aventurancas/build/app/intermediates/transforms/dexMerger/debug/0
+base.1=/home/renan/Área de Trabalho/Hd Externo/bem_aventurancas/build/app/intermediates/transforms/dexMerger/debug/0
+base.0=/home/renan/Área de Trabalho/Hd Externo/bem_aventurancas/build/app/intermediates/transforms/dexMerger/debug/0

@@ -2,6 +2,7 @@ import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:bem_aventurancas/model/News.dart';
 import 'package:bem_aventurancas/screens/dailyLiturgy/widget/container_ask.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'floating_button_liturgy.dart';
 
@@ -25,9 +26,10 @@ class StaggerAnimation extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height *0.2,
           color: Color.fromRGBO(169, 26, 54, 1),
+          alignment: Alignment.topLeft,
         ),
         Padding(padding: EdgeInsets.fromLTRB(15, MediaQuery.of(context).size.height *0.1, 15, 5),
-          child: ContainerAsk(dailyLiturgy: DailyLiturgy(liturgy.title, "")),)
+          child: ContainerAsk(dailyLiturgy: liturgy == null? dailyLiturgy : DailyLiturgy(liturgy.title, "")),)
       ],
     );
   }

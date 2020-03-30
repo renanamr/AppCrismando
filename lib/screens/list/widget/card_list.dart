@@ -18,7 +18,7 @@ class _CardListState extends State<CardList> {
     return Card(
       margin: EdgeInsets.only(bottom: widget.listSlidePosition.value),
       child: ListTile(
-        onTap: () { Navigator.push(context, MaterialPageRoute(builder:(_)=> DailyLiturgyScreen(edit: true,)));},
+        onTap: () { Navigator.push(context, MaterialPageRoute(builder:(_)=> DailyLiturgyScreen(edit: true, dailyLiturgy: widget.dailyLiturgy,)));},
         title: Text(
           "${widget.dailyLiturgy.title}",
           style: TextStyle(color: Colors.black),

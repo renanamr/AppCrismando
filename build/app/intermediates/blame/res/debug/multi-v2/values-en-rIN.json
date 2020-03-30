@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/renan/Área de Trabalho/Hd Externo/bem_aventurancas/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
+            "map": [
+                {
+                    "source": "/home/renan/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/b0d981d627671df5f8ba993b82eb5e42/res/values-en-rIN/values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

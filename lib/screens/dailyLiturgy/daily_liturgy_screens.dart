@@ -42,6 +42,7 @@ class _DailyLiturgyScreenState extends State<DailyLiturgyScreen> with SingleTick
       controller: _controller.view,
       edit: widget.edit,
       liturgy: widget.liturgy,
+      dailyLiturgy: widget.dailyLiturgy,
     );
   }
 }

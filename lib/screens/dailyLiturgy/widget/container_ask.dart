@@ -23,13 +23,37 @@ class _ContainerAskState extends State<ContainerAsk> {
 
   _registerDiary() async{
 
-    widget.dailyLiturgy.answer1 = answerController1.text;
-    widget.dailyLiturgy.answer2 = answerController2.text;
-    widget.dailyLiturgy.answer3 = answerController3.text;
-    widget.dailyLiturgy.answer4 = answerController4.text;
+    if(widget.dailyLiturgy.answer1 == null){
+      widget.dailyLiturgy.answer1 = answerController1.text;
+      widget.dailyLiturgy.answer2 = answerController2.text;
+      widget.dailyLiturgy.answer3 = answerController3.text;
+      widget.dailyLiturgy.answer4 = answerController4.text;
 
-    await database.saveDailyLiturgy(widget.dailyLiturgy);
+      database.saveDailyLiturgy(widget.dailyLiturgy);
+    }
+
     Navigator.of(context).pop();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    if(widget.dailyLiturgy.answer1 != null){
+      answerController1.text = widget.dailyLiturgy.answer1;
+      answerController2.text = widget.dailyLiturgy.answer2;
+      answerController3.text = widget.dailyLiturgy.answer3;
+      answerController4.text = widget.dailyLiturgy.answer4;
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    answerController1.dispose();
+    answerController2.dispose();
+    answerController3.dispose();
+    answerController4.dispose();
   }
 
   @override
