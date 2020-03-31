@@ -27,6 +27,9 @@ class StaggerAnimation extends StatelessWidget {
           height: MediaQuery.of(context).size.height *0.2,
           color: Color.fromRGBO(169, 26, 54, 1),
           alignment: Alignment.topLeft,
+          child: Padding(padding: EdgeInsets.only(top: 18),
+            child: FlatButton.icon(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back, color: Colors.white,), label: Text("Voltar",style: TextStyle(color: Colors.white),)),
+          )
         ),
         Padding(padding: EdgeInsets.fromLTRB(15, MediaQuery.of(context).size.height *0.1, 15, 5),
           child: ContainerAsk(dailyLiturgy: liturgy == null? dailyLiturgy : DailyLiturgy(liturgy.title, "")),)
