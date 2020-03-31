@@ -1,6 +1,7 @@
 import 'package:bem_aventurancas/helpers/InformationHelper.dart';
 import 'package:bem_aventurancas/model/DailyLiturgy.dart';
 import 'package:bem_aventurancas/model/News.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'widget/stagger_animation.dart';
 import 'package:flutter/material.dart';
@@ -49,11 +50,22 @@ class _ListScreenState extends State<ListScreen>  with SingleTickerProviderState
     super.dispose();
   }
 
-  _initializeListNews(){
+  _initializeListNews() async{
+    Firestore _db = Firestore.instance;
+
+    QuerySnapshot querySnapshot = await _db.collection("news").limit(10).getDocuments();
+    List<News> listTemporary = List<News>();
+
+    for(var item in querySnapshot.documents){
+      News news = News.fromMap(item.data);
+      listTemporary.add(news);
+    }
+
     setState(() {
-      listNews =
-      [News("Teste 1, com palavras grandes para ver alinhamento",description: "Notícia para teste, apes.Notícia para teste, apes.vvvNotícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes.Notícia para teste, apes."),News("Teste 2",description: "Notícia para teste, apes2.")]; // Teste de noticias;
+      listNews = listTemporary;
     });
+
+    listTemporary=null;
   }
 
   _initializeListDailyLiturgy() async {

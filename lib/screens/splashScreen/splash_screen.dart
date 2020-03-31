@@ -17,10 +17,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _recuperarLiturgia();
+    _recoverLiturgy();
   }
 
-  _recuperarLiturgia() async{
+  _recoverLiturgy() async{
 
     DocumentSnapshot snapshort = await _db.collection("liturgy").document(DateTime.now().day.toString()).get();
 
