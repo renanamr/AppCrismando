@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Mar 30 10:48:19 GMT 2020
+#Mon Mar 30 12:43:35 GMT 2020
 4.path=lib/armeabi-v7a/libflutter.so
 13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE

@@ -84,6 +84,8 @@ class _ContainerAskState extends State<ContainerAsk> {
             TextField(
               cursorColor: Colors.red,
               controller: answerController1,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
             ),
             Padding(
               padding: EdgeInsets.only(top: 15),
@@ -97,7 +99,9 @@ class _ContainerAskState extends State<ContainerAsk> {
             ),
             TextField(
               cursorColor: Colors.red,
-                controller: answerController2,
+              controller: answerController2,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
             ),
             Padding(
               padding: EdgeInsets.only(top: 15),
@@ -111,7 +115,9 @@ class _ContainerAskState extends State<ContainerAsk> {
             ),
             TextField(
               cursorColor: Colors.red,
-                controller: answerController3,
+              controller: answerController3,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
             ),
             Padding(
               padding: EdgeInsets.only(top: 15),
@@ -125,7 +131,9 @@ class _ContainerAskState extends State<ContainerAsk> {
             ),
             TextField(
               cursorColor: Colors.red,
-                controller: answerController4,
+              controller: answerController4,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
             ),
 
             Card(
