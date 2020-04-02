@@ -24,14 +24,14 @@ class StaggerAnimation extends StatelessWidget {
       children: <Widget>[
         Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height *0.2,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ? MediaQuery.of(context).size.height *0.20 :MediaQuery.of(context).size.height *0.25,
           color: Color.fromRGBO(169, 26, 54, 1),
           alignment: Alignment.topLeft,
-          child: Padding(padding: EdgeInsets.only(top: 18),
-            child: FlatButton.icon(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back, color: Colors.white,), label: Text("Voltar",style: TextStyle(color: Colors.white),)),
+          child: SafeArea(
+              child: FlatButton.icon(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back, color: Colors.white,), label: Text("Voltar",style: TextStyle(color: Colors.white),))
           )
         ),
-        Padding(padding: EdgeInsets.fromLTRB(15, MediaQuery.of(context).size.height *0.1, 15, 5),
+        Padding(padding: EdgeInsets.fromLTRB(15, MediaQuery.of(context).orientation == Orientation.portrait ? MediaQuery.of(context).size.height *0.1 : MediaQuery.of(context).size.height *0.17, 15, 5),
           child: ContainerAsk(dailyLiturgy: liturgy == null? dailyLiturgy : DailyLiturgy(liturgy.title, "")),)
       ],
     );

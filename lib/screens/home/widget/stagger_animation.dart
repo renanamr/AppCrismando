@@ -37,7 +37,7 @@ class StaggerAnimation extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.grey, opacity: 1),
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Image.asset("assets/imagens/cmslogo.jpg"),
+        title: Image.asset("assets/imagens/cmslogo.jpg", fit: BoxFit.cover, height: 50,),
       ),
       body: SingleChildScrollView(
         child: Container(
